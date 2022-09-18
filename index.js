@@ -123,20 +123,17 @@ LoanArray.push(Person5)
 console.log(LoanArray)
 //const total = 0;
 //let sum = 0;
-let Gtotal =0
 
+
+const Gtotal = LoanArray.map(loanAmt => loanAmt.calculatedLoanAmount());
 LoanArray.forEach((item)=> console.log(item.calculatedLoanAmount()));
-//LoanArray.forEach(item=>{
-  //  sum += item.calculatedLoanAmount();
 //})
 // LoanArray.forEach((item) =>total = item.calculatedLoanAmount()
 
-const sum = LoanArray.reduce((accumulator, item)=>{
-     return item.calculatedLoanAmount() +accumulator;
-    
-     
-},0)
 
-// );
 
-console.log(`The Grand total is ${sum}`);
+const total = Gtotal.reduce((accumulator, value) => {
+    return accumulator + value;
+  }, 0)
+  
+   console.log(`The Total amount of Loan given is: ${total}`)
